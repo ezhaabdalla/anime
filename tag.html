@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(60, 0, 46);  
+        }
+        .loader{
+            position: relative;
+            width:100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(#fecf11,#dd0000,#01ecfd);
+            animation: animate 0.5s linear infinite;
+        }
+        @keyframes animate{
+            0%
+            {
+                transform: rotate(0deg);
+            }
+            100%
+            {
+                transform: rotate(360deg);
+
+            }
+        }
+        .loader span{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(#fecf11,#dd0000,#01ecfd);
+        }
+        .loader span:nth-child(1)
+        {
+            filter: blur(5px);
+        }
+        .loader span:nth-child(2)
+        {
+            filter: blur(10px);
+        }
+        .loader span:nth-child(3)
+        {
+            filter: blur(25px);
+        }
+        .loader span:nth-child(4)
+        {
+            filter: blur(50px);
+        }
+        .loader::after
+        {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            background: rgba(74, 0, 57, 0.427);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>  
+    </div>
+</body>
+</html>
